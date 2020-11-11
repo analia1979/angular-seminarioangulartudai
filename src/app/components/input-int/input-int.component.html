@@ -1,0 +1,13 @@
+<p class="card-text ">
+    <small class="text-muted ">
+        <button class="btn btn-sm btn-danger"
+         (click)="decreaseQuantity()"><i class="fas fa-minus"></i>
+        </button>
+        <input style="max-width: 30px;" type="number"
+         [(ngModel)]="quantity" 
+         (keyup)="changeQuantity($event)">
+          <button class="btn btn-sm btn-success" 
+          (click)="addQuantity()"><i class="fas fa-plus"></i>
+        </button>
+    </small>
+</p>

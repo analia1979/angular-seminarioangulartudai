@@ -1,0 +1,71 @@
+nav {
+   background: url(/assets/images/logo.jpg) no-repeat center bottom;
+  background-size: cover;
+  
+  transition: all 1s ease;
+}
+
+.navbar {
+  
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.nav-bar a {
+  font-family: 'Roboto', 'sans-serif';
+  transition: .5s ease;
+}
+
+.nav-link {
+  color:darkgrey;
+}
+
+.nav-link:hover {
+  color:darkgrey;
+;
+}
+
+/* .logo-brand {
+  min-width: 100px;
+  max-width: 150px;
+  margin-left: 25px;
+  margin-top: 10px;
+} */
+
+.logo{
+   /*  width:100px;
+    height:30px; */
+     min-width: 100px;
+  max-width: 150px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    margin-top: 5%;
+    ;
+}
+
+.icon {
+    margin-top: 20%;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+    margin-top: 5%;
+}

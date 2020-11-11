@@ -1,0 +1,20 @@
+<h1 class="animated fadeIn fast">Productos Fiambreria</h1>
+<hr>
+<div class="card-columns ">
+    <div *ngFor="let producto of productos; let i = index" class="card animated fadeIn">
+        <img [src]="producto.img" class="card-img-top" width="300" height="300" [alt]="producto.nombre">
+        <div class="card-body ">
+            <h5 class="card-title ">{{ producto.nombre }}</h5>
+            <p class="card-text "><small class="text-muted "><b>Marca</b>{{ producto.marca }}</small></p>
+            <p class="card-text "><small class="text-muted "><b>Precio </b>{{ producto.precio | currency }}</small></p>
+
+            <p class="card-text "><small class="text-muted ">Stock <i *ngIf='producto.stock!=0'
+                        class="far fa-check-circle"></i><i *ngIf='producto.stock==0'
+                        class="far fa-times-circle"></i></small></p>
+            <app-input-int [(quantity)]="producto.quantity" [max]="producto.stock" *ngIf="producto.stock!=0"
+                (maxReached)="maxReached($event)"></app-input-int>
+            <p class="card-text "><small class="text-muted "> <button class="btn btn-primary" *ngIf="producto.stock!=0"
+                        (click)="addToCart(producto)">Comprar</button></small></p>
+        </div>
+    </div>
+</div>

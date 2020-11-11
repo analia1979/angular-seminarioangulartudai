@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Sus Compras</h1>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col ">Nombre</th>
+            <th scope="col ">Precio unitario</th>
+            <th scope="col ">Cantidad</th>
+            <th scope="col ">SubTotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of cartProducts$ | async ">
+            <td>{{a.nombre}}</td>
+            <td>{{a.precio |currency}}</td>
+            <td>{{a.quantity}}</td>
+            <td>{{a.quantity * a.precio | currency}}</td>
+        </tr>
+        <div *ngIf="(cartProducts$ | async).length!=0">
+            <h1>Total A pagar: {{total$ | async |currency}}</h1>
+        </div>
+    </tbody>
+    <button (click)="submitCart()" class="btn btn-outline-primary" *ngIf="(cartProducts$ | async).length!=0">Confirmar
+        compra</button>
+</table>
